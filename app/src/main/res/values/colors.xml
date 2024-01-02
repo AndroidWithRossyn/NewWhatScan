@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    <color name="colorPrimary">#59C9FA</color>-->
+    <!--    <color name="colorPrimaryDark">#5299B8</color>-->
+    <!--    <color name="colorAccent">#F7A76F</color>-->
+
+    <color name="colorPrimary">#00A3E8</color>
+    <color name="colorPrimaryDark">#00A3E8</color>
+    <color name="colorAccent">#ff0000</color>
+
+    <!--    <color name="colorPrimary">#FFC107</color>-->
+    <!--    <color name="colorPrimaryDark">#FFA000</color>-->
+    <!--    <color name="colorAccent">#FF4081</color>-->
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000</color>
+    <color name="colorTransparent">#b2ffffff</color>
+    <color name="blue">#5d67f1</color>
+    <color name="nav_saver">#2e8b57</color>
+    <color name="nav_saver1">#53c685</color>
+    <color name="nav_saver2">#39ac6b</color>
+    <color name="nav_saver3">#2e8b57</color>
+    <color name="red">#ff0000</color>
+    <color name="White">#ffffffff</color>
+    <color name="dinwhite">#cbffffff</color>
+    <color name="gray">#ffe7e7e7</color>
+    <color name="lightdark">#ff777777</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="bg_row_background">#fa315b</color>
+    <color name="item_name">#535353</color>
+    <color name="first_slide_background">#02C45C</color>
+    <color name="first_slide_buttons">#880E4F</color>
+
+    <color name="second_slide_background">#02C45C</color>
+    <color name="second_slide_buttons">#4A148C</color>
+
+    <color name="third_slide_background">#02C45C</color>
+    <color name="third_slide_buttons">#004D40</color>
+
+    <color name="fourth_slide_background">#02C45C</color>
+    <color name="fourth_slide_buttons">#3E2723</color>
+
+    <color name="custom_slide_background">#3F51B5</color>
+    <color name="custom_slide_buttons">#1A237E</color>
+
+    <!--Splash Screen-->
+    <item name="splash_background" type="color">@color/colorPrimary</item>
+
+</resources>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<resources>-->
+    <!--    <color name="colorPrimary">#267347</color>-->
+    <!--    <color name="colorPrimaryDark">#133924</color>-->
+    <!--    <color name="colorAccent">#39ac6b</color>-->
+    <!--    <color name="white">#ffffff</color>-->
+    <!--    <color name="black">#000</color>-->
+    <!--    <color name="colorTransparent">#b2ffffff</color>-->
+    <!--    <color name="blue">#5d67f1</color>-->
+    <!--    <color name="nav_saver">#2e8b57</color>-->
+    <!--    <color name="nav_saver1">#53c685</color>-->
+    <!--    <color name="nav_saver2">#39ac6b</color>-->
+    <!--    <color name="nav_saver3">#2e8b57</color>-->
+    <!--    <color name="red">#ff0000</color>-->
+
+
+    <!--</resources>-->

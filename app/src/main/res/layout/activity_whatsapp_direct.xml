@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical"
+                        android:padding="5sp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                                android:id="@+id/ccp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight="5.5"
+                                android:background="@drawable/etborder"
+                                android:ems="10"
+                                android:padding="15dp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textColorHint="@color/gray"
+                                android:textSize="13sp"
+                                app:ccp_defaultNameCode="IN"
+                                app:ccp_textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/etphonenumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="4.5"
+                                android:background="@drawable/etborder"
+                                android:drawableLeft="@drawable/ic_mobile"
+                                android:drawablePadding="10dp"
+                                android:hint="Mobile Number"
+                                android:inputType="number"
+                                android:padding="15dp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/gray"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/etborder"
+                            android:gravity="top|left|center_vertical|center_horizontal|center|start"
+                            android:hint="Enter Message"
+                            android:padding="10dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/btn_send"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:background="@color/colorPrimary"
+                            android:text="Send"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="  Step follow :\10\10  1. First select country code\10 2. Enter whats-app number\10 3. Enter message\10 4. and last click on send button"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            tools:ignore="RtlCompat" />
+                    </LinearLayout>
+                    <com.google.android.ads.nativetemplates.TemplateView
+                        android:id="@+id/TemplateView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:gnt_template_type="@layout/gnt_medium_template_view" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

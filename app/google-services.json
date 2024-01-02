@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "654914135906",
+    "project_id": "whatzweb-ea163",
+    "storage_bucket": "whatzweb-ea163.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654914135906:android:fad2c019fc552f7381ee3b",
+        "android_client_info": {
+          "package_name": "com.SachinApps.Whatscan.Pro.WhatsClone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZL6-im9e2QOmnw06WNcDeYSVJox-QOac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      },
+      "admob_app_id": "ca-app-pub-8956472886210802~6376420408"
+    }
+  ],
+  "configuration_version": "1"
+}

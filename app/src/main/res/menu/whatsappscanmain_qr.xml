@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/rate_us"
+        android:icon="@drawable/image_iconstar"
+        android:orderInCategory="100"
+        android:title="@string/rate"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/history"
+        android:icon="@drawable/image_iconhistory"
+        android:orderInCategory="100"
+        android:title="@string/history"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,45 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    ext {
+        agp_version = '8.0.0'
+    }
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+        maven { url 'https://artifacts.applovin.com/android' }
+
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$agp_version"
+        classpath 'com.google.gms:google-services:4.3.8'
+        classpath "com.applovin.quality:AppLovinQualityServiceGradlePlugin:+"
+        classpath 'io.fabric.tools:gradle:1.31.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://dl.bintray.com/drummer-aidan/maven' }
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+        maven {
+            url 'https://maven.google.com/'
+        }
+        maven {
+            url 'https://android-sdk.is.com/'
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

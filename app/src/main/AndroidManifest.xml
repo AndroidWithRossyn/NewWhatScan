@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.SachinApps.Whatscan.Pro.WhatsClone">
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.hardware.camera.flash" />
+
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_LAUNCH_BROADCASTS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+
+    <application
+        android:name=".manage.GoogleAds.MyApplication"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.RepeatTextActivity"/>
+        <activity android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.StylishFontsActivity" />
+        <activity android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.WhatsappDirectActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.SachinApps.Whatscan.Pro.WhatsClone.whatwebscanfileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/fileprovider" />
+        </provider>
+
+        <activity
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.MainActivity">
+
+        </activity>
+        <activity
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.WhatsWebActivity"
+            android:label="Whatscan" />
+        <activity
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.StatusSaverActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.WhstWebFullScreenImage"
+            android:label="Full View" />
+        <activity
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.AboutActivity"
+            android:label="About" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="sensorLandscape"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.IntroActivit"
+            android:theme="@style/Theme.Intro" />
+
+        <service
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.restarter.JobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Service"
+            android:clearTaskOnLaunch="true"
+            android:enabled="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance" />
+
+        <receiver
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.restarter.RestartServiceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="StartMyServiceAtBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="uk.ac.shef.oak.activity_recognition.sensor_service.RestartSensor" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="applovin.sdk.key"
+            android:value="FnLsZB3do7Z9PqcnCEgzGQ3pIKPtCTtXOpfGToou6s9DvaEeZBbSMRFLfKpF_K9OxC5hGBRo3bbMTdtB4Hc_o9"/>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8956472886210802~4566297367" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.Setup"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.MessegesActivity" />
+
+        <service
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Services.NotifyListener"
+            android:exported="true"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Services.NotificationService"
+            android:enabled="true"
+            android:exported="false"
+            android:stopWithTask="false" />
+        <service android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Services.StartGetting" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.SachinApps.Whatscan.Pro.WhatsClone.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>
