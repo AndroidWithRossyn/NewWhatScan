@@ -1,6 +1,6 @@
 package com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities;
 
-import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdsDecalration.loadAdmobBannerAds;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,12 +10,15 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdManager;
+import com.SachinApps.Whatscan.Pro.WhatsClone.manage.utils.UserHelper;
 import com.google.android.gms.ads.AdSize;
 import com.SachinApps.Whatscan.Pro.WhatsClone.Font;
 import com.SachinApps.Whatscan.Pro.WhatsClone.FontAdapter;
@@ -33,15 +36,23 @@ public class StylishFontsActivity extends AppCompatActivity {
     private TextView tvTitle;
 
     FrameLayout adView;
+    StylishFontsActivity activity;
+    UserHelper userHelper;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stylish_fonts);
+        activity = this;
+        userHelper = new UserHelper(activity);
         adView = findViewById(R.id.adView0);
-
-        loadAdmobBannerAds(this,adView, AdSize.BANNER);
+        if (!userHelper.getBillingInfo() && userHelper.getStringValue(UserHelper.bannerAdId) != null) {
+            Log.d("databseConfig", "load Ads");
+            AdManager.loadBannerAd(StylishFontsActivity.this, adView, userHelper.getStringValue(UserHelper.bannerAdId));
+        } else {
+            adView.setVisibility(View.GONE);
+        }
 
         this.etText = (EditText) findViewById(R.id.et_text);
         this.rvStylishFonts = (RecyclerView) findViewById(R.id.rv_fonts);

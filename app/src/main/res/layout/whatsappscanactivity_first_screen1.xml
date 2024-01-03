@@ -22,7 +22,7 @@
             ads:cardBackgroundColor="@color/white"
             android:layout_marginHorizontal="@dimen/padd_10"
             android:layout_marginTop="@dimen/padd_10"
-            android:visibility="gone">
+            android:visibility="gone"  >
 
 
             <RelativeLayout
@@ -322,13 +322,11 @@
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>
-
-            <com.google.android.ads.nativetemplates.TemplateView
+            <FrameLayout
                 android:id="@+id/TemplateView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:gnt_template_type="@layout/gnt_medium_template_view" />
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

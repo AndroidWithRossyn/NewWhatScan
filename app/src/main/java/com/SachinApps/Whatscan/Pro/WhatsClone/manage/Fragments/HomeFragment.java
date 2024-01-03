@@ -24,7 +24,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.SachinApps.Whatscan.Pro.WhatsClone.R;
 
 import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.App.adCount;
-import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdsDecalration.loadAdmobBannerAds;
+
 
 public class HomeFragment extends Fragment {
     private Context context;
@@ -82,9 +82,6 @@ public class HomeFragment extends Fragment {
         secondTab.setText("Media files");
         tabLayout.addTab(secondTab);
 
-        adView = view.findViewById(R.id.adView0);
-
-        loadAdmobBannerAds(getActivity(),adView, AdSize.BANNER);
 
 //
 //        TabLayout.Tab secondTab2 = tabLayout.newTab();

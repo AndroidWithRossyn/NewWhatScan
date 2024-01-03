@@ -1,8 +1,5 @@
 package com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities;
 
-import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdsDecalration.loadNative;
-import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdsDecalration.mNativeAd;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -11,12 +8,15 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdManager;
+import com.SachinApps.Whatscan.Pro.WhatsClone.manage.utils.UserHelper;
 import com.google.android.ads.nativetemplates.TemplateView;
 import com.SachinApps.Whatscan.Pro.WhatsClone.R;
 import com.rilixtech.widget.countrycodepicker.CountryCodePicker;
@@ -30,24 +30,25 @@ public class WhatsappDirectActivity extends AppCompatActivity {
     CountryCodePicker ccp;
     EditText edt_message;
     EditText edt_phonenumber;
-    TemplateView templateView;
+    FrameLayout templateView;
+    UserHelper userHelper;
+    WhatsappDirectActivity activity;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_whatsapp_direct);
-
+        activity = this;
+        userHelper = new UserHelper(activity);
         templateView = findViewById(R.id.TemplateView);
 
-        loadNative(this);
-
-        if (mNativeAd != null){
+        if (!userHelper.getBillingInfo() && userHelper.getStringValue(UserHelper.bannerAdId) != null) {
+            Log.d("databseConfig", "load Ads");
             templateView.setVisibility(View.VISIBLE);
-            templateView.setNativeAd(mNativeAd);
+          AdManager.loadNativeAds(WhatsappDirectActivity.this, templateView, userHelper.getStringValue(UserHelper.nativeAdId));
         }
 
-        FrameLayout fl_adplaceholder = (FrameLayout)findViewById(R.id.fl_adplaceholder);
 
         this.btn_send = (Button) findViewById(R.id.btn_send);
         this.edt_message = (EditText) findViewById(R.id.edt_message);

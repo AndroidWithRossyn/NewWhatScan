@@ -1,7 +1,5 @@
 package com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities;
 
-import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdsDecalration.loadNative;
-import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdsDecalration.mNativeAd;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,16 +11,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdManager;
+import com.SachinApps.Whatscan.Pro.WhatsClone.manage.utils.UserHelper;
 import com.google.android.ads.nativetemplates.TemplateView;
 import com.SachinApps.Whatscan.Pro.WhatsClone.R;
 
@@ -44,7 +44,7 @@ public class RepeatTextActivity extends AppCompatActivity {
     Button btnShare;
     TextView txtNewLine;
 
-    TemplateView templateView;
+    FrameLayout templateView;
 
 
     //Click event of Button Convert
@@ -173,11 +173,19 @@ public class RepeatTextActivity extends AppCompatActivity {
             RepeatTextActivity.this.imNewLine.setImageResource(R.drawable.ons);
         }
     }
+
+    UserHelper userHelper;
+    RepeatTextActivity activity;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_text_repeater);
+
+        activity = this;
+        userHelper = new UserHelper(activity);
+
         this.pDialog = new ProgressDialog(this);
         this.txtNewLine = findViewById(R.id.txtNewLine);
         this.imNewLine = findViewById(R.id.btnNewLine);
@@ -190,13 +198,12 @@ public class RepeatTextActivity extends AppCompatActivity {
         }
 
         templateView = findViewById(R.id.TemplateView);
-
-        loadNative(this);
-
-        if (mNativeAd != null){
+        if (!userHelper.getBillingInfo()) {
+            Log.d("databseConfig", "load Ads");
             templateView.setVisibility(View.VISIBLE);
-            templateView.setNativeAd(mNativeAd);
+            AdManager.loadNativeAds(RepeatTextActivity.this, templateView, userHelper.getStringValue(UserHelper.nativeAdId));
         }
+
 
         this.imNewLine.setOnClickListener(new newLineClick());
         this.txtInput = findViewById(R.id.inputText);

@@ -110,12 +110,11 @@
                             android:textSize="16dp"
                             tools:ignore="RtlCompat" />
                     </LinearLayout>
-                    <com.google.android.ads.nativetemplates.TemplateView
+                    <FrameLayout
                         android:id="@+id/TemplateView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        app:gnt_template_type="@layout/gnt_medium_template_view" />
+                        android:visibility="gone" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

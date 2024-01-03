@@ -1,12 +1,11 @@
 <resources>
 
-<!--    <string name="image_icon_ADMOB_banner">ca-app-pub-8956472886210802/4818095725</string>-->
-<!--    <string name="image_icon_Admob_Intrestital">ca-app-pub-8956472886210802/8313970687</string>-->
-<!--    <string name="image_icon_Admob_native">ca-app-pub-8956472886210802/6021197183</string>-->
-<!--    <string name="banner_id">ca-app-pub-8956472886210802/4818095725</string>-->
-<!--    <string name="interstitial_id">ca-app-pub-8956472886210802/8313970687</string>-->
-    <string name="add_app_id">ca-app-pub-8956472886210802~6376420408</string>
-<!--    <string name="add_app_id1">ca-app-pub-3940256099942544/3419835294</string>-->
+    <string name="add_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="native_id">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="reword_id">	ca-app-pub-3940256099942544/5224354917</string>
+    <string name="open_id">ca-app-pub-3940256099942544/9257395921</string>
 
 
     <string name="app_name">Whatscan Pro</string>

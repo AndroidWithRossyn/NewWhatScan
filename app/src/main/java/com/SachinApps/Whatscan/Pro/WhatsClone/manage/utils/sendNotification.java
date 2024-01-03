@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
+import androidx.core.graphics.drawable.IconCompat;
 
 import com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.MainActivity;
 import com.SachinApps.Whatscan.Pro.WhatsClone.manage.App;
@@ -21,7 +22,7 @@ public class sendNotification {
             final NotificationCompat.Builder setContentIntent = new NotificationCompat.Builder(context, App.channelId)
                     .setContentTitle((CharSequence) contentTitle)
                     .setContentText((CharSequence) contentText)
-                    .setSmallIcon(com.applovin.sdk.R.drawable.notification_template_icon_bg)
+                    .setSmallIcon(IconCompat.createWithBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.logo)))
                     .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.logo))
                     .setBadgeIconType(R.drawable.logo)
                     .setAutoCancel(true)

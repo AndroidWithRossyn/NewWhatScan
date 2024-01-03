@@ -1,6 +1,6 @@
 package com.SachinApps.Whatscan.Pro.WhatsClone.manage.Adapters;
 
-import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdsDecalration.loadRewarded;
+
 
 import android.content.Context;
 import android.content.Intent;

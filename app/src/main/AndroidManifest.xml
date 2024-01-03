@@ -38,6 +38,8 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
 
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="com.android.vending.BILLING" />
     <application
         android:name=".manage.GoogleAds.MyApplication"
         android:networkSecurityConfig="@xml/network_security_config"
@@ -132,12 +134,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
-        <meta-data android:name="applovin.sdk.key"
-            android:value="FnLsZB3do7Z9PqcnCEgzGQ3pIKPtCTtXOpfGToou6s9DvaEeZBbSMRFLfKpF_K9OxC5hGBRo3bbMTdtB4Hc_o9"/>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8956472886210802~4566297367" />
+            android:value="@string/add_app_id" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -1,8 +1,5 @@
 package com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities;
 
-import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdsDecalration.loadAdmobBannerAds;
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -29,6 +26,8 @@ import androidx.core.content.ContextCompat;
 import androidx.documentfile.provider.DocumentFile;
 import androidx.viewpager.widget.ViewPager;
 
+import com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdManager;
+import com.SachinApps.Whatscan.Pro.WhatsClone.manage.utils.UserHelper;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
@@ -45,7 +44,7 @@ public class StatusSaverActivity extends AppCompatActivity {
     WhstWebPagerAdapter pager_adapter_view;
     TabLayout tl;
     ViewPager view_Pager;
-    Activity activity;
+    StatusSaverActivity activity;
 
     TextView permissionTV;
     ArrayList<Uri> fileArrayList = new ArrayList<>();
@@ -54,13 +53,20 @@ public class StatusSaverActivity extends AppCompatActivity {
 
     FrameLayout adView;
 
+    UserHelper userHelper;
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.whatsappscanactivity_home_screen);
-
+        activity = this;
+        userHelper = new UserHelper(activity);
         adView = findViewById(R.id.adView0);
 
-        loadAdmobBannerAds(this,adView, AdSize.BANNER);
+        if (!userHelper.getBillingInfo() && userHelper.getStringValue(UserHelper.bannerAdId) != null) {
+            Log.d("databseConfig", "load Ads");
+            AdManager.loadBannerAd(StatusSaverActivity.this, adView, userHelper.getStringValue(UserHelper.bannerAdId));
+        } else {
+            adView.setVisibility(View.GONE);
+        }
 
         tl = (TabLayout) findViewById(R.id.tabs);
         view_Pager = (ViewPager) findViewById(R.id.container);

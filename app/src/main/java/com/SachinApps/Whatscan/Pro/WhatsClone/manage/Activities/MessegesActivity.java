@@ -1,9 +1,9 @@
 package com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities;
 
-import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdsDecalration.loadAdmobBannerAds;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdManager;
+import com.SachinApps.Whatscan.Pro.WhatsClone.manage.utils.UserHelper;
 import com.google.android.gms.ads.AdSize;
 import com.SachinApps.Whatscan.Pro.WhatsClone.R;
 import com.SachinApps.Whatscan.Pro.WhatsClone.manage.Adapters.msgAdapter;
@@ -49,13 +51,15 @@ public class MessegesActivity extends AppCompatActivity {
             }
         }
     }
-
+    UserHelper userHelper;
+    MessegesActivity activity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messeges);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-
+        activity = this;
+        userHelper = new UserHelper(activity);
         String stringExtra = getIntent().getStringExtra("name");
         new loadMsg(new WeakReference(this)).execute(stringExtra, getIntent().getStringExtra("pack"));
         setTitle(stringExtra);
@@ -70,7 +74,12 @@ public class MessegesActivity extends AppCompatActivity {
 
         adView = findViewById(R.id.adView0);
 
-        loadAdmobBannerAds(this,adView, AdSize.BANNER);
+        if (!userHelper.getBillingInfo() && userHelper.getStringValue(UserHelper.bannerAdId) != null) {
+            Log.d("databseConfig", "load Ads");
+            AdManager.loadBannerAd(MessegesActivity.this, adView, userHelper.getStringValue(UserHelper.bannerAdId));
+        } else {
+            adView.setVisibility(View.GONE);
+        }
     }
 
 }
