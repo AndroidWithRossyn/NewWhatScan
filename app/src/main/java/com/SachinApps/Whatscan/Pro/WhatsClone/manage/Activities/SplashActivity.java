@@ -59,6 +59,12 @@ public class SplashActivity extends AppCompatActivity {
                 idReworded = snapshot.child("idReworded").getValue(String.class);
                 idAppopen = snapshot.child("idAppopen").getValue(String.class);
                 versionCode = snapshot.child("versionCode").getValue(Integer.class);
+                
+                      idBanner = getString(R.string.banner_id);
+        idInterstitial = getString(R.string.interstitial_id);
+        idNative = getString(R.string.native_id);
+        idReworded = getString(R.string.reword_id);
+        idAppopen = getString(R.string.open_id);
             }
 
             @Override
@@ -73,11 +79,7 @@ public class SplashActivity extends AppCompatActivity {
             }
         });
 
-        idBanner = getString(R.string.banner_id);
-        idInterstitial = getString(R.string.interstitial_id);
-        idNative = getString(R.string.native_id);
-        idReworded = getString(R.string.reword_id);
-        idAppopen = getString(R.string.open_id);
+  
 
         userHelper.saveStringValue(UserHelper.bannerAdId, idBanner);
         userHelper.saveStringValue(UserHelper.interstitialAdId, idInterstitial);
