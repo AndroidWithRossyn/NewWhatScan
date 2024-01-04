@@ -79,4 +79,26 @@
     <string name="menu_send">Send</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="prime"> Elevate your experience and take your app usage to the next level with premium features and exclusive content. Say goodbye to interruptions and embrace seamless app usage with our \"Remove Ads\"  feature!</string>
+    <string name="prime1">Most affordable price ever !!!</string>
+
+    <string name="disc">All Purchases use Google Play\'s billing library and will go through your Google Account. Subscription will be auto renewed at the each cycle. You can Cancel Anytime!\nPlease note that certain conditions may apply in Cancel Process. Lifetime subscription cannot be canceled. Contact <b>banrossyn@gmail.com</b> for any queries.\nYour happiness is our priority!</string>
+
+    <string name="purchase_list">✯UNLIMITED Downloads\n✯No Ads\n✯Faster Downloads\n✯Download Story\'s without Login\n✯Priority Support\n✯Private Account Downloads\n✯Cancel Anytime!</string>
+
+    <string name="purchase_dialog">Download diamonds is the number of downloads you can do without leaving the Instagram! You can add more diamonds for free by watching a video ad or Get Premium for <b>Unlimited Balance!</b></string>
+    <string name="purchase_dialog_note">Note: It is deducted only when you download without opening the InSaver app. These Diamonds will be not be deducted when you Download using the \'Paste URL\' Method inside the InSaver App.</string>
+    <string name="how_to_download"><u>How to Download?</u></string>
+    <string name="premium_user">Dear User, you have already taken a subscription in the app. You can wait for continue a new subscription. You get the same facility if you take multiple subscriptions. Please wait for the last subscription to expire.\nNote: You will be responsible for the multiple payments.</string>
+    <string name="google_refund_policy"><u>Google Refund policy</u></string>
+    <string name="google_subscription"><u>Google Privacy Policy</u></string>
+    <string name="google_terms_of_service"><u>Terms of Service</u></string>
+
+    <string name="manage_subscription">https://play.google.com/store/account/subscriptions</string>
+    <string name="google_privacy">https://policies.google.com/privacy</string>
+    <string name="google_terms">https://policies.google.com/terms</string>
+    <string name="refund_policy">https://support.google.com/googleplay/answer/2479637?sjid=5262144278901328310-AP</string>
+
 </resources>

@@ -25,8 +25,8 @@ public class MyApplication extends Application {
         SharedPreferences prefs = getSharedPreferences(SHAREDPREFERENCEFILENAME, MODE_PRIVATE);
         boolean billing = prefs.getBoolean("night_mode", false);
         String adId = prefs.getString(openAdId, getResources().getString(R.string.open_id));
-        //  Log.d("themestatus", "" + theme);
-        if (billing) {
+
+        if (!billing) {
             new AppOpenManager(this, adId);
         }
 

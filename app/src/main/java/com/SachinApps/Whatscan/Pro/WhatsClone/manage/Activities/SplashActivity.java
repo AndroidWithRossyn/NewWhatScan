@@ -1,14 +1,11 @@
 package com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities;
 
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.SachinApps.Whatscan.Pro.WhatsClone.manage.utils.UserHelper;
 import com.android.billingclient.api.AcknowledgePurchaseParams;
 import com.android.billingclient.api.AcknowledgePurchaseResponseListener;
@@ -24,7 +21,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.SachinApps.Whatscan.Pro.WhatsClone.R;
-
 import java.util.List;
 
 public class SplashActivity extends AppCompatActivity {
@@ -53,7 +49,7 @@ public class SplashActivity extends AppCompatActivity {
         checkSubscription();
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Ads");
-/*        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -75,7 +71,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
             }
-        });*/
+        });
 
         idBanner = getString(R.string.banner_id);
         idInterstitial = getString(R.string.interstitial_id);

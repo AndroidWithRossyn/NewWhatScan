@@ -70,6 +70,10 @@
 
         </activity>
         <activity
+            android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.PremiumActivity">
+
+        </activity>
+        <activity
             android:name="com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.WhatsWebActivity"
             android:label="Whatscan" />
         <activity

@@ -1,6 +1,7 @@
 package com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities;
 
 import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.Activities.SplashActivity.versionCode;
+import static com.SachinApps.Whatscan.Pro.WhatsClone.manage.restarter.RestartServiceBroadcastReceiver.TAG;
 
 
 import android.app.Dialog;
@@ -18,26 +19,46 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.SachinApps.Whatscan.Pro.WhatsClone.manage.GoogleAds.AdManager;
+import com.SachinApps.Whatscan.Pro.WhatsClone.manage.utils.Security;
 import com.SachinApps.Whatscan.Pro.WhatsClone.manage.utils.UserHelper;
+import com.android.billingclient.api.AcknowledgePurchaseParams;
+import com.android.billingclient.api.AcknowledgePurchaseResponseListener;
+import com.android.billingclient.api.BillingClient;
+import com.android.billingclient.api.BillingClientStateListener;
+import com.android.billingclient.api.BillingFlowParams;
+import com.android.billingclient.api.BillingResult;
+import com.android.billingclient.api.ConsumeParams;
+import com.android.billingclient.api.ConsumeResponseListener;
+import com.android.billingclient.api.ProductDetails;
+import com.android.billingclient.api.ProductDetailsResponseListener;
+import com.android.billingclient.api.Purchase;
+import com.android.billingclient.api.PurchasesUpdatedListener;
+import com.android.billingclient.api.QueryProductDetailsParams;
 import com.google.android.ads.nativetemplates.TemplateView;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
 import com.SachinApps.Whatscan.Pro.WhatsClone.R;
 import com.SachinApps.Whatscan.Pro.WhatsClone.manage.utils.AppUtils;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private ReviewManager reviewManager;
     CardView cv_update, cv_download;
-
     TextView tv_cancel;
-
     ImageView iv_cancel;
     CardView cv_statusSaver, cv_whatsWeb, cv_deleted_Msg, cv_direct_Chat, cv_stylish_Font, cv_repeatText, cv_hoeToUse, cv_remove_ads, cv_RateApp;
     UserHelper userHelper;
@@ -147,8 +168,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         cv_remove_ads.setOnClickListener(view -> {
-
-
+            Intent intent = new Intent(MainActivity.this, PremiumActivity.class);
+            startActivity(intent);
         });
 
         cv_RateApp.setOnClickListener(view -> showRateAppFallbackDialog());
@@ -255,5 +276,8 @@ public class MainActivity extends AppCompatActivity {
         exitdialog.show();
 
     }
+
+
+
 
 }
